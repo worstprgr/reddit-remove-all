@@ -1,6 +1,6 @@
 # Reddit Post Remover
 
-This script removes **all posts and comments** you ever made in Reddit.  
+This script removes **all posts and comments** you ever made on Reddit.  
 Since Reddit does not provide a "nuke all" option, we have to do it.
 
 ## Installation
@@ -66,7 +66,7 @@ If you want to restore deleted comments and posts, you have to contact the Reddi
 providing such an option.  
 
 ## Bugs
-If you encounter some bugs, you can open an issue on Github. Please follow the template below:
+If you encounter some bugs, you can open an issue on GitHub. Please follow the template below:
 1. Description of the issue
 2. Step-by-Step Reproduction
 3. If present: exception message/stacktrace
