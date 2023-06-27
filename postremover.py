@@ -11,26 +11,6 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 
 
-"""
-Requirements
-    CHROME
-        You need to start Chrome with debug flags activated and pass a available port to it.
-        I've chosen port 9222 as a default value
-            Console: 
-                chrome.exe --remote-debugging-port=9222
-            
-        Thanks to this guide btw:
-            https://cosmocode.io/how-to-connect-selenium-to-an-existing-browser-that-was-opened-manually/
-            
-    
-    FIREFOX
-        You can start Firefox with debug flags too, the only difference is, the debug port is fixed to
-        2828 by Firefox. So you can't choose a different port.
-            Console:
-                firefox.exe -marionette -start-debugger-server 2828
-"""
-
-
 class PostRemover:
     def __init__(self, username, browser):
         self.username = str(username)
