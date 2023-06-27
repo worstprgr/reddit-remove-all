@@ -1,6 +1,6 @@
 # Reddit Post Remover
 
-This script removes **all posts and comments** you ever made in Reddit.  
+This script removes **all posts and comments** you ever made on Reddit.  
 Since Reddit does not provide a "nuke all" option, we have to do it.
 
 ## Installation
