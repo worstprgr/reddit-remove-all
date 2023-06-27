@@ -8,7 +8,6 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options as ChromeOptions
-from selenium.webdriver.firefox.options import Options as FirefoxOptions
 
 
 class PostRemover:
@@ -26,13 +25,12 @@ class PostRemover:
             self.driver = webdriver.Chrome(options=chrome_options)
         elif self.driver_option == 'F':
             self.__consoleLog(0, 'Using Firefox')
-            firefox_options = FirefoxOptions()
             service_options = Service(service_args=[
                 '--marionette-port',
                 str(self.debug_port_firefox),
                 '--connect-existing'
             ])
-            self.driver = webdriver.Firefox(service=service_options, options=firefox_options)
+            self.driver = webdriver.Firefox(service=service_options)
         else:
             self.__consoleLog(3, 'Missing driver option')
 
