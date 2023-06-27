@@ -7,7 +7,7 @@ import selenium.common.exceptions as exceptions
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 
 
@@ -21,7 +21,7 @@ class PostRemover:
 
         if self.driver_option == 'C':
             self.__consoleLog(0, 'Using Chrome')
-            chrome_options = Options()
+            chrome_options = ChromeOptions()
             chrome_options.add_experimental_option("debuggerAddress", f"127.0.0.1:{self.debug_port_chrome}")
             self.driver = webdriver.Chrome(options=chrome_options)
         elif self.driver_option == 'F':
