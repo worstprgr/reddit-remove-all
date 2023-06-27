@@ -33,6 +33,7 @@ class PostRemover:
             self.driver = webdriver.Firefox(service=service_options)
         else:
             self.__consoleLog(3, 'Missing driver option')
+            sys.exit(1)
 
     def deletePost(self):
         def nuke():
