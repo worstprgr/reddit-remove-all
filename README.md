@@ -32,7 +32,7 @@ Because we're using the browser in debug mode, we can use the existing session o
    For &lt;Browser> you have the choice between 'C' (Chrome) and 'F' (Firefox)  
    Example:
    ```text
-   py C:/Users/Steve/Scripts/reddit-remove-posts/pr-cly.py steve C
+   py C:/Users/Steve/Scripts/reddit-remove-posts/pr-cli.py steve C
    ```
    
 ## Usage (Advanced)
