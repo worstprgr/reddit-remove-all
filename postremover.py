@@ -11,12 +11,21 @@ from selenium.webdriver.chrome.options import Options as ChromeOptions
 
 
 class PostRemover:
-    def __init__(self, username, browser):
+    def __init__(self, username, mode, browser):
         self.username = str(username)
-        self.url_posts = f'https://www.reddit.com/user/{self.username}'
+        self.url_user = f'https://www.reddit.com/user/{self.username}'
+        self.url_posts = self.url_user + '/submitted'
+        self.url_comments = self.url_user + '/comments'
         self.driver_option = str(browser).upper()
         self.debug_port_chrome = 9222
         self.debug_port_firefox = 2828
+
+        if mode == 'p':
+            self.main_url = self.url_posts
+        elif mode == 'c':
+            self.main_url = self.url_comments
+        else:
+            raise UserWarning('None or incorrect mode chosen')
 
         if self.driver_option == 'C':
             self.__consoleLog(0, 'Using Chrome')
@@ -54,7 +63,7 @@ class PostRemover:
         error = False
         driver = self.driver
         driver.switch_to.new_window('tab')
-        driver.get(self.url_posts)
+        driver.get(self.main_url)
 
         # check routine
         self.__checkUsernameExist()
@@ -80,7 +89,7 @@ class PostRemover:
                     # if the error appears more than once, we're reloading the page
                     error = False
                     self.__consoleLog(1, 'Reloading page')
-                    driver.get(self.url_posts)
+                    driver.get(self.main_url)
                 else:
                     # sometimes an element we want to access isn't available in the initial instance
                     # we just skip it for now
