@@ -27,12 +27,13 @@ Because we're using the browser in debug mode, we can use the existing session o
    since it creates a new tab anyway
 3. Open a command line with the following command
    ```text
-   py <path to the script>/pr-cli.py <RedditUserName> <Browser>
+   py <path to the script>/pr-cli.py <RedditUserName> <Mode> <Browser>
    ```
-   For &lt;Browser> you have the choice between 'C' (Chrome) and 'F' (Firefox)  
+   For &lt;Browser> you have the choice between 'C' (Chrome) or 'F' (Firefox)  
+   For &lt;Mode> you have the choice between 'p' (deleting posts) or 'c' (deleting comments)
    Example:
    ```text
-   py C:/Users/Steve/Scripts/reddit-remove-posts/pr-cli.py steve C
+   py C:/Users/Steve/Scripts/reddit-remove-posts/pr-cli.py steve p C
    ```
    
 ## Usage (Advanced)
@@ -40,7 +41,7 @@ If you want to use it inside a script:
 ```python
 import postremover
 
-postrem = postremover.PostRemover('<REDDIT_USERNAME>', '<BROWSER>')
+postrem = postremover.PostRemover('<REDDIT_USERNAME>', '<MODE>', '<BROWSER>')
 postrem.deletePost()
 ```
 
